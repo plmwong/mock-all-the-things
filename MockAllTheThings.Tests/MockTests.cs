@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using Moq;
 
 namespace MockAllTheThings.Tests
 {
@@ -8,10 +9,28 @@ namespace MockAllTheThings.Tests
 		[Test]
 		public void CanMockTestServiceWithMixedDependencies()
 		{
-			var mockedTestService = new PlzMock<TestServiceWithMixedDependencies>().AllTheThings();
+			var mockedTestService = new Create<TestServiceWithMixedDependencies>()
+											.MockingAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+		}
+
+		[Test]
+		public void CanMockTestServiceWithPresuppliedMock()
+		{
+			var mockTestInterface = new Mock<ITestInterface>();
+			var mockTestInterfaceObject = mockTestInterface.Object;
+
+			var mockedTestService = 
+				new Create<TestServiceWithMixedDependencies>()
+					.UsingThisMockFor<ITestInterface>(mockTestInterfaceObject)
+					.MockingAllTheThings();
+
+			Assert.IsNotNull(mockedTestService);
+			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+
+			Assert.AreSame(mockedTestService.TestInterface, mockTestInterfaceObject);
 		}
 	}
 }

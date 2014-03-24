@@ -32,9 +32,9 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="PlzMock.cs" />
     <Compile Include="IMockProvider.cs" />
     <Compile Include="MoqMockProvider.cs" />
+    <Compile Include="Create.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Moq">
