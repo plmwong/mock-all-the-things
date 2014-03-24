@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings", "MockAllTheThings\MockAllTheThings.csproj", "{AECCF987-00A5-422A-BBDE-50F36117A9BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Core", "MockAllTheThings.Core\MockAllTheThings.Core.csproj", "{AECCF987-00A5-422A-BBDE-50F36117A9BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Tests", "MockAllTheThings.Tests\MockAllTheThings.Tests.csproj", "{14D16EDD-61E5-4171-8149-0775E6D57A55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Moq.Tests", "MockAllTheThings.Moq.Tests\MockAllTheThings.Moq.Tests.csproj", "{14D16EDD-61E5-4171-8149-0775E6D57A55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Moq", "MockAllTheThings.Moq\MockAllTheThings.Moq.csproj", "{F414CB7A-55D3-4256-BD76-166B50F00614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.RhinoMocks", "MockAllTheThings.RhinoMocks\MockAllTheThings.RhinoMocks.csproj", "{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,12 +19,20 @@ Global
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Debug|x86.Build.0 = Debug|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Release|x86.ActiveCfg = Release|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Release|x86.Build.0 = Release|x86
+		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Debug|x86.ActiveCfg = Debug|x86
+		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Debug|x86.Build.0 = Debug|x86
+		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Release|x86.ActiveCfg = Release|x86
+		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Release|x86.Build.0 = Release|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.ActiveCfg = Debug|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.Build.0 = Debug|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.ActiveCfg = Release|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.Build.0 = Release|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.ActiveCfg = Debug|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.Build.0 = Debug|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.ActiveCfg = Release|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = MockAllTheThings\MockAllTheThings.csproj
+		StartupItem = MockAllTheThings.Core\MockAllTheThings.Core.csproj
 	EndGlobalSection
 EndGlobal

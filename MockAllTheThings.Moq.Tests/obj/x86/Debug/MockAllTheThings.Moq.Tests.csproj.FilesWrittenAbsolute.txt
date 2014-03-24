@@ -1,0 +1,12 @@
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.Tests.dll.mdb
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.Tests.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/obj/x86/Debug/MockAllTheThings.Tests.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/obj/x86/Debug/MockAllTheThings.Tests.dll.mdb
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/nunit.framework.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/Moq.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/Rhino.Mocks.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.dll.mdb
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.Moq.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq.Tests/bin/Debug/MockAllTheThings.Moq.dll.mdb

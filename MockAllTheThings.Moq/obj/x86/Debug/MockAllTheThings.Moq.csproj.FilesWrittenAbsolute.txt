@@ -1,0 +1,8 @@
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/bin/Debug/MockAllTheThings.Moq.dll.mdb
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/bin/Debug/MockAllTheThings.Moq.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/obj/x86/Debug/MockAllTheThings.Moq.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/obj/x86/Debug/MockAllTheThings.Moq.dll.mdb
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/bin/Debug/Moq.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/bin/Debug/MockAllTheThings.dll
+/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.Moq/bin/Debug/MockAllTheThings.dll.mdb
