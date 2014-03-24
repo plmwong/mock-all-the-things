@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Moq", "Moc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.RhinoMocks", "MockAllTheThings.RhinoMocks\MockAllTheThings.RhinoMocks.csproj", "{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.RhinoMocks.Tests", "MockAllTheThings.RhinoMocks.Tests\MockAllTheThings.RhinoMocks.Tests.csproj", "{A892D47C-5452-4844-AF75-2E9B20CF1633}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -23,6 +25,10 @@ Global
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Debug|x86.Build.0 = Debug|x86
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Release|x86.ActiveCfg = Release|x86
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Release|x86.Build.0 = Release|x86
+		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Debug|x86.ActiveCfg = Debug|x86
+		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Debug|x86.Build.0 = Debug|x86
+		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Release|x86.ActiveCfg = Release|x86
+		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Release|x86.Build.0 = Release|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.ActiveCfg = Debug|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.Build.0 = Debug|x86
 		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.ActiveCfg = Release|x86
