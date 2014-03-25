@@ -6,10 +6,8 @@ Intro
 
 Basically a simple auto-mocker. Currently supports Moq and RhinoMocks.
 
-Usage
+Setup
 -----
-
-### Setup
 
 ```
 Create.UsingProvider(new MoqMockProvider());
@@ -18,6 +16,9 @@ or
 ```
 Create.UsingProvider(new RhinoMocksMockProvider());
 ```
+
+Usage
+-----
 
 ```
 public class Foo(IBar bar1, IBar bar2, IBaz baz) {
