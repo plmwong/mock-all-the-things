@@ -1,8 +1,0 @@
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/bin/Debug/MockAllTheThings.RhinoMocks.dll.mdb
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/bin/Debug/MockAllTheThings.RhinoMocks.dll
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/obj/x86/Debug/MockAllTheThings.RhinoMocks.dll
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/obj/x86/Debug/MockAllTheThings.RhinoMocks.dll.mdb
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/bin/Debug/Rhino.Mocks.dll
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/bin/Debug/MockAllTheThings.dll
-/Users/phillipw/Projects/MockAllTheThings/MockAllTheThings.RhinoMocks/bin/Debug/MockAllTheThings.dll.mdb
