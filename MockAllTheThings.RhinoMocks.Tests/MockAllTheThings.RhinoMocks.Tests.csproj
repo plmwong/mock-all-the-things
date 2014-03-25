@@ -38,6 +38,7 @@
     <Compile Include="TestService.cs" />
     <Compile Include="TestServiceWithMixedDependencies.cs" />
     <Compile Include="RhinoMocksMockProviderTests.cs" />
+    <Compile Include="TestServiceWithMultipleIdenticalDependencies.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
