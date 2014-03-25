@@ -22,7 +22,9 @@ Create.MeA<Foo>()
 	.MockingAllTheThings();
 ```
 
-### Providing and instance for a type
+### Providing an instance for a type
+
+Note: This will affect all instances of the type (unless a specific parameter is targetted).
 
 ```
 Create.MeA<Foo>()
@@ -30,7 +32,7 @@ Create.MeA<Foo>()
         .AndMockingAllTheOtherThings();
 ```
 
-### Providing and instance for a specific parameter
+### Providing an instance for a specific parameter
 
 ```
 Create.MeA<Foo>()
