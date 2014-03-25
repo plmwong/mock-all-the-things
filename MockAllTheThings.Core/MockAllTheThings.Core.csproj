@@ -36,8 +36,8 @@
     <Compile Include="Create.cs" />
     <Compile Include="CreateBuilderInitial.cs" />
     <Compile Include="ObjectExtensions.cs" />
-    <Compile Include="CreateBuilderConfiguredMock.cs" />
     <Compile Include="CreateBuilderConfiguredIndexedMock.cs" />
+    <Compile Include="CreateBuilderConfiguredTypeMock.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Core" />
