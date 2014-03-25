@@ -9,6 +9,12 @@ Basically a simple auto-mocker. Currently supports Moq and RhinoMocks.
 Usage
 -----
 
+```
+public class Foo(IBar bar1, IBar bar2, IBaz baz) {
+       ...
+}
+```
+
 ### Mock everything
 
 ```
