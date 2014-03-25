@@ -49,6 +49,7 @@
     <Compile Include="TestService.cs" />
     <Compile Include="MoqMockProviderTests.cs" />
     <Compile Include="TestServiceWithMixedDependencies.cs" />
+    <Compile Include="TestServiceWithMultipleIdenticalDependencies.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MockAllTheThings.Core\MockAllTheThings.Core.csproj">

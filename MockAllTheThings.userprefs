@@ -1,11 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MockAllTheThings.RhinoMocks/RhinoMocksMockProvider.cs">
-    <Files>
-      <File FileName="MockAllTheThings.Moq.Tests/MoqMockProviderTests.cs" Line="12" Column="24" />
-      <File FileName="MockAllTheThings.Core/Create.cs" Line="6" Column="3" />
-      <File FileName="MockAllTheThings.RhinoMocks/RhinoMocksMockProvider.cs" Line="20" Column="24" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
