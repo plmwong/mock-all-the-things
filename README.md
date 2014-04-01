@@ -4,7 +4,7 @@ Mock All The Things
 Intro
 -----
 
-Basically a simple auto-mocker. Currently supports Moq and RhinoMocks.
+A very basic auto-mocker. Currently supports Moq and RhinoMocks.
 
 Setup
 -----
