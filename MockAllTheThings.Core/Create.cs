@@ -21,6 +21,12 @@ namespace MockAllTheThings.Core
 			}
 		}
 
+		public static void UsingProvider(Func<Type, object> factoryMethod) {
+			lock (_lock) {
+				_instance = new FactoryMethodMockProvider(factoryMethod);
+			}
+		}
+
 		public static CreateBuilderInitial<T> MeA<T>() {
 			if (Instance.IsNull()) {
 				throw new InvalidOperationException("Create must first be configured with a Mock Provider.");
