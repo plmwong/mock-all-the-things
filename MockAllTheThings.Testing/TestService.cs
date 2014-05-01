@@ -1,5 +1,5 @@
 ﻿
-namespace MockAllTheThings.Moq.Tests
+namespace MockAllTheThings.Testing
 {
 	public class TestService
 	{

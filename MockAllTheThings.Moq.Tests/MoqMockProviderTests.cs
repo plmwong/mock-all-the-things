@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Moq;
 using MockAllTheThings.Core;
+using MockAllTheThings.Testing;
 
 namespace MockAllTheThings.Moq.Tests
 {
@@ -13,7 +14,7 @@ namespace MockAllTheThings.Moq.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithMixedDependencies()
+		public void CanCreateAMockOfAServiceWithMixedConstructorDependencyTypes()
 		{
 			var mockedTestService = 
 				Create
@@ -25,7 +26,7 @@ namespace MockAllTheThings.Moq.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithPresuppliedMock()
+		public void CanCreateAMockTestServiceUsingAPresuppliedMock()
 		{
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;
@@ -43,7 +44,7 @@ namespace MockAllTheThings.Moq.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithMultiplePresuppliedMocks()
+		public void CanCreateAMockTestServiceUsingMultiplePresuppliedMocks()
 		{
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;
@@ -62,7 +63,7 @@ namespace MockAllTheThings.Moq.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithIndexedMock()
+		public void CanCreateAMockTestServiceUsingAnIndexedMock()
 		{
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;
@@ -82,7 +83,7 @@ namespace MockAllTheThings.Moq.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
+		public void CanCreateAMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
 		{
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;

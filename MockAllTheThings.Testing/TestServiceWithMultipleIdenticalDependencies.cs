@@ -1,5 +1,5 @@
 ﻿
-namespace MockAllTheThings.RhinoMocks.Tests
+namespace MockAllTheThings.Testing
 {
 	public class TestServiceWithMultipleIdenticalDependencies
 	{

@@ -33,13 +33,7 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="ITestInterface.cs" />
-    <Compile Include="TestAbstractClass.cs" />
-    <Compile Include="TestConcreteClass.cs" />
-    <Compile Include="TestService.cs" />
-    <Compile Include="TestServiceWithMixedDependencies.cs" />
     <Compile Include="RhinoMocksMockProviderTests.cs" />
-    <Compile Include="TestServiceWithMultipleIdenticalDependencies.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
@@ -60,6 +54,10 @@
     <ProjectReference Include="..\MockAllTheThings.RhinoMocks\MockAllTheThings.RhinoMocks.csproj">
       <Project>{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}</Project>
       <Name>MockAllTheThings.RhinoMocks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MockAllTheThings.Testing\MockAllTheThings.Testing.csproj">
+      <Project>{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}</Project>
+      <Name>MockAllTheThings.Testing</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

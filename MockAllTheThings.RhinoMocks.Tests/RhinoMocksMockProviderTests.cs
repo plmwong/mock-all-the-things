@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using MockAllTheThings.Core;
 using MockAllTheThings.RhinoMocks;
+using MockAllTheThings.Testing;
 using Rhino.Mocks;
 
 namespace MockAllTheThings.RhinoMocks.Tests
@@ -14,7 +15,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithMixedDependencies()
+		public void CanCreateAMockOfAServiceWithMixedConstructorDependencyTypes()
 		{
 			var mockedTestService = 
 				Create
@@ -26,7 +27,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithPresuppliedMock()
+		public void CanCreateAMockTestServiceUsingAPresuppliedMock()
 		{
 			var mockTestInterface = MockRepository.GenerateMock<ITestInterface>();
 
@@ -43,7 +44,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithMultiplePresuppliedMocks()
+		public void CanCreateAMockTestServiceUsingMultiplePresuppliedMocks()
 		{
 			var mockTestInterface = MockRepository.GenerateMock<ITestInterface>();
 
@@ -61,7 +62,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithIndexedMock()
+		public void CanCreateAMockTestServiceUsingAnIndexedMock()
 		{
 			var mockTestInterfaceObject = MockRepository.GenerateMock<ITestInterface>();
 
@@ -80,7 +81,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		}
 
 		[Test]
-		public void CanMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
+		public void CanCreateAMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
 		{
 			var mockTestInterfaceObject = MockRepository.GenerateMock<ITestInterface>();
 
