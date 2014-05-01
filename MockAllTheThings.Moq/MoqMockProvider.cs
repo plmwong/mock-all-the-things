@@ -6,7 +6,7 @@ namespace MockAllTheThings.Moq
 {
 	public class MoqMockProvider : IMockProvider
 	{
-		#region IMockProvider implementation
+		#region IMockProvider implementation	
 
 		public object CreateMock(Type type)
 		{
