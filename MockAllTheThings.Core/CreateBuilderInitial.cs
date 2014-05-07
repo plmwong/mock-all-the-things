@@ -16,6 +16,8 @@ namespace MockAllTheThings.Core
 		}
 
 		public CreateBuilderConfiguredTypeMock<T> UsingThisInstanceToMock<TMock>(TMock mockedObject) {
+            Must.NotBeNull(() => mockedObject);
+
 			_configuredMocks.Add(typeof(TMock), mockedObject);
 			return new CreateBuilderConfiguredTypeMock<T>(this, typeof(TMock));
 		}

@@ -5,24 +5,24 @@ namespace MockAllTheThings.Core
 	public static class Create
 	{
 		private static IMockProvider _instance;
-		private static readonly object _lock = new object();
+		private static readonly object Lock = new object();
 
 		internal static IMockProvider Instance {
 			get {
-				lock (_lock) {
+				lock (Lock) {
 					return _instance;
 				}
 			}
 		}
 
 		public static void UsingProvider(IMockProvider mockProvider) {
-			lock (_lock) {
+			lock (Lock) {
 				_instance = mockProvider;
 			}
 		}
 
 		public static void UsingProvider(Func<Type, object> factoryMethod) {
-			lock (_lock) {
+			lock (Lock) {
 				_instance = new FactoryMethodMockProvider(factoryMethod);
 			}
 		}
