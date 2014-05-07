@@ -4,7 +4,7 @@ Mock All The Things
 Intro
 -----
 
-A very basic auto-mocker. Currently supports Moq and RhinoMocks.
+A very basic auto-mocker. Currently supports Moq, RhinoMocks and FakeItEasy as sources for mocks.
 
 Setup
 -----
@@ -15,6 +15,10 @@ Create.UsingProvider(new MoqMockProvider());
 or
 ```
 Create.UsingProvider(new RhinoMocksMockProvider());
+```
+or
+```
+Create.UsingProvider(new FakeItEasyMockProvider());
 ```
 
 Usage
