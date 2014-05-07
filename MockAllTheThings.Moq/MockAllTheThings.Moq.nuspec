@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>https://bitbucket.org/plmw/mock-all-the-things</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>mock automocker moq</tags>
+	<dependencies> 
+	   <group>
+		  <dependency id="MockAllTheThings.Core" version="0.2.1" />
+	   </group>
+	</dependencies>
+  </metadata>
+</package>

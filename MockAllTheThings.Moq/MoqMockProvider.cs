@@ -6,7 +6,7 @@ namespace MockAllTheThings.Moq
 {
 	public class MoqMockProvider : IMockProvider
 	{
-		#region IMockProvider implementation
+		#region IMockProvider implementation	
 
 		public object CreateMock(Type type)
 		{
@@ -14,7 +14,7 @@ namespace MockAllTheThings.Moq
 			var mockerGenericType = mockerType.MakeGenericType(type);
 			var mocker = Activator.CreateInstance(mockerGenericType);
 
-			var objectPropertyInfo = mockerGenericType.GetProperty("Object");
+            var objectPropertyInfo = mockerGenericType.GetProperty("Object", mockerGenericType);
 			var mockedObject = objectPropertyInfo.GetValue(mocker, null);
 
 			return mockedObject;

@@ -5,10 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}</ProjectGuid>
+    <ProjectGuid>{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>MockAllTheThings.RhinoMocks</RootNamespace>
-    <AssemblyName>MockAllTheThings.RhinoMocks</AssemblyName>
+    <RootNamespace>MockAllTheThings.FakeItEasy.Tests</RootNamespace>
+    <AssemblyName>MockAllTheThings.FakeItEasy.Tests</AssemblyName>
+    <UseMSBuildEngine>True</UseMSBuildEngine>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
@@ -23,34 +24,43 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <PlatformTarget>x86</PlatformTarget>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    <Compile Include="FakeItEasyMockProviderTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeItEasy">
+      <HintPath>..\packages\FakeItEasy.1.19.0\lib\net40\FakeItEasy.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RhinoMocksMockProvider.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MockAllTheThings.Core\MockAllTheThings.Core.csproj">
       <Project>{AECCF987-00A5-422A-BBDE-50F36117A9BE}</Project>
       <Name>MockAllTheThings.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MockAllTheThings.Testing\MockAllTheThings.Testing.csproj">
+      <Project>{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}</Project>
+      <Name>MockAllTheThings.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MockAllTheThings.FakeItEasy\MockAllTheThings.FakeItEasy.csproj">
+      <Project>{1A4E54BE-3913-4B1B-8754-DDEA4321C970}</Project>
+      <Name>MockAllTheThings.FakeItEasy</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

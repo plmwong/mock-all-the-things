@@ -2,8 +2,8 @@
 
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
-[assembly: AssemblyTitle("MockAllTheThings.Core")]
-[assembly: AssemblyDescription("Core assembly for Mock All The Things.")]
+[assembly: AssemblyTitle("MockAllTheThings.FakeItEasy")]
+[assembly: AssemblyDescription("FakeItEasy support for Mock All The Things.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Phillip Wong")]
 [assembly: AssemblyProduct("")]

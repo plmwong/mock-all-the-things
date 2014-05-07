@@ -15,24 +15,35 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Core.Tests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.Testing", "MockAllTheThings.Testing\MockAllTheThings.Testing.csproj", "{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.FakeItEasy", "MockAllTheThings.FakeItEasy\MockAllTheThings.FakeItEasy.csproj", "{1A4E54BE-3913-4B1B-8754-DDEA4321C970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockAllTheThings.FakeItEasy.Tests", "MockAllTheThings.FakeItEasy.Tests\MockAllTheThings.FakeItEasy.Tests.csproj", "{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6275C47B-F1F8-465B-91B2-9F80C2FB3044}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.ActiveCfg = Debug|x86
+		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.Build.0 = Debug|x86
+		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.ActiveCfg = Release|x86
+		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.Build.0 = Release|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Debug|x86.ActiveCfg = Debug|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Debug|x86.Build.0 = Debug|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Release|x86.ActiveCfg = Release|x86
 		{14D16EDD-61E5-4171-8149-0775E6D57A55}.Release|x86.Build.0 = Release|x86
-		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Debug|x86.ActiveCfg = Debug|x86
-		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Debug|x86.Build.0 = Debug|x86
-		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Release|x86.ActiveCfg = Release|x86
-		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Release|x86.Build.0 = Release|x86
-		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Debug|x86.ActiveCfg = Debug|x86
-		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Debug|x86.Build.0 = Debug|x86
-		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Release|x86.ActiveCfg = Release|x86
-		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Release|x86.Build.0 = Release|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.ActiveCfg = Debug|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.Build.0 = Debug|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.ActiveCfg = Release|x86
+		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.Build.0 = Release|x86
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Debug|x86.ActiveCfg = Debug|x86
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Debug|x86.Build.0 = Debug|x86
 		{9D49AA1E-93A9-4647-81C4-CE7842C82D1D}.Release|x86.ActiveCfg = Release|x86
@@ -41,14 +52,25 @@ Global
 		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Debug|x86.Build.0 = Debug|x86
 		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Release|x86.ActiveCfg = Release|x86
 		{A892D47C-5452-4844-AF75-2E9B20CF1633}.Release|x86.Build.0 = Release|x86
-		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.ActiveCfg = Debug|x86
-		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Debug|x86.Build.0 = Debug|x86
-		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.ActiveCfg = Release|x86
-		{AECCF987-00A5-422A-BBDE-50F36117A9BE}.Release|x86.Build.0 = Release|x86
-		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.ActiveCfg = Debug|x86
-		{F414CB7A-55D3-4256-BD76-166B50F00614}.Debug|x86.Build.0 = Debug|x86
-		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.ActiveCfg = Release|x86
-		{F414CB7A-55D3-4256-BD76-166B50F00614}.Release|x86.Build.0 = Release|x86
+		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Debug|x86.ActiveCfg = Debug|x86
+		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Debug|x86.Build.0 = Debug|x86
+		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Release|x86.ActiveCfg = Release|x86
+		{4A5A025F-6614-4416-9CB8-0B795DA67A7B}.Release|x86.Build.0 = Release|x86
+		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Debug|x86.ActiveCfg = Debug|x86
+		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Debug|x86.Build.0 = Debug|x86
+		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Release|x86.ActiveCfg = Release|x86
+		{24BBFF02-1B52-4A90-9777-2266AEB0F4A4}.Release|x86.Build.0 = Release|x86
+		{1A4E54BE-3913-4B1B-8754-DDEA4321C970}.Debug|x86.ActiveCfg = Debug|x86
+		{1A4E54BE-3913-4B1B-8754-DDEA4321C970}.Debug|x86.Build.0 = Debug|x86
+		{1A4E54BE-3913-4B1B-8754-DDEA4321C970}.Release|x86.ActiveCfg = Release|x86
+		{1A4E54BE-3913-4B1B-8754-DDEA4321C970}.Release|x86.Build.0 = Release|x86
+		{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}.Debug|x86.ActiveCfg = Debug|x86
+		{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}.Debug|x86.Build.0 = Debug|x86
+		{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}.Release|x86.ActiveCfg = Release|x86
+		{99CCD1AF-912B-410F-8C59-B0616D6B0B9C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MockAllTheThings.Core\MockAllTheThings.Core.csproj
