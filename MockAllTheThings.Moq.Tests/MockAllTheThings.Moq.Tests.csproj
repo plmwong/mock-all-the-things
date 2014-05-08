@@ -46,6 +46,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockExtensionsTests.cs" />
     <Compile Include="MoqMockProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
