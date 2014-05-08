@@ -27,7 +27,7 @@ namespace MockAllTheThings.Core
 			}
 		}
 
-		public static CreateBuilderInitial<T> MeA<T>() {
+		public static CreateBuilderInitial<T> A<T>() {
 			if (Instance.IsNull()) {
 				throw new InvalidOperationException("Create must first be configured with a Mock Provider.");
 			}

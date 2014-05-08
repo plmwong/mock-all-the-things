@@ -15,7 +15,7 @@ namespace MockAllTheThings.Core
 			_configuredIndexMocks = new Dictionary<int, object>();
 		}
 
-		public CreateBuilderConfiguredTypeMock<T> UsingThisInstanceToMock<TMock>(TMock mockedObject) {
+		public CreateBuilderConfiguredTypeMock<T> UsingInstanceFor<TMock>(TMock mockedObject) {
             Must.NotBeNull(() => mockedObject);
 
 			_configuredMocks.Add(typeof(TMock), mockedObject);

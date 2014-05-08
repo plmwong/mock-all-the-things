@@ -9,13 +9,13 @@ namespace MockAllTheThings.Core
 			_configuredMockBuilder = configuredMockBuilder;
 		}
 
-		public CreateBuilderConfiguredTypeMock<T> AndUsingThisInstanceToMock<TMock>(TMock mockedObject) {
-			_configuredMockBuilder.AndUsingThisInstanceToMock<TMock>(mockedObject);
+        public CreateBuilderConfiguredTypeMock<T> UsingInstanceFor<TMock>(TMock mockedObject) {
+            _configuredMockBuilder.UsingInstanceFor(mockedObject);
 			return _configuredMockBuilder;
 		}
 
-		public T AndMockingAllTheOtherThings() {
-			return _configuredMockBuilder.AndMockingAllTheOtherThings();
+		public T MockingAllTheOtherThings() {
+			return _configuredMockBuilder.MockingAllTheOtherThings();
 		}
 	}
 }

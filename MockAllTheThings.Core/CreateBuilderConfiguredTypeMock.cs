@@ -12,18 +12,18 @@ namespace MockAllTheThings.Core
 			_lastMockedObjectType = lastMockedObjectType;
 		}
 
-		public CreateBuilderConfiguredIndexedMock<T> SpecificallyForTheArgumentAt(int parameterIndex) {
+        public CreateBuilderConfiguredIndexedMock<T> At(int parameterIndex) {
 			_initialBuilder.TransferTypeMockToIndexedMock(_lastMockedObjectType, parameterIndex);
 			return new CreateBuilderConfiguredIndexedMock<T>(this);
 		}
 
-		public CreateBuilderConfiguredTypeMock<T> AndUsingThisInstanceToMock<TMock>(TMock mockedObject) {
-			_initialBuilder.UsingThisInstanceToMock<TMock>(mockedObject);
+		public CreateBuilderConfiguredTypeMock<T> UsingInstanceFor<TMock>(TMock mockedObject) {
+			_initialBuilder.UsingInstanceFor(mockedObject);
 			_lastMockedObjectType = typeof(TMock);
 			return this;
 		}
 
-		public T AndMockingAllTheOtherThings() {
+		public T MockingAllTheOtherThings() {
 			return _initialBuilder.MockingAllTheThings();
 		}
 	}

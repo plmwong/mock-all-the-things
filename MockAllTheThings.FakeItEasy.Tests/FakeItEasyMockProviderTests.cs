@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using MockAllTheThings.Core;
 using MockAllTheThings.Testing;
-using MockAllTheThings.FakeItEasy;
 using FakeItEasy;
 
 namespace MockAllTheThings.FakeItEasy.Tests
@@ -18,8 +17,7 @@ namespace MockAllTheThings.FakeItEasy.Tests
 		public void CanCreateAMockOfAServiceWithMixedConstructorDependencyTypes()
 		{
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMixedDependencies>()
+				Create.A<TestServiceWithMixedDependencies>()
 					.MockingAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
@@ -32,10 +30,9 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterface = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterface)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterface)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -49,11 +46,10 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterface = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterface)
-					.AndUsingThisInstanceToMock<TestAbstractClass>(A.Fake<TestAbstractClass>())
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterface)
+                    .UsingInstanceFor<TestAbstractClass>(A.Fake<TestAbstractClass>())
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -67,12 +63,10 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterfaceObject = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(0)
-					.AndUsingThisInstanceToMock<TestAbstractClass>(A.Fake<TestAbstractClass>())
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
+                    .UsingInstanceFor<TestAbstractClass>(A.Fake<TestAbstractClass>())
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -86,11 +80,9 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterfaceObject = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(0)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -107,11 +99,9 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterfaceObject = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(2)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(2)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -128,10 +118,9 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			var mockTestInterfaceObject = A.Fake<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);

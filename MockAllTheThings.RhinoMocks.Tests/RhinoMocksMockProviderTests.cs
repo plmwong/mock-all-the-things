@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using MockAllTheThings.Core;
-using MockAllTheThings.RhinoMocks;
 using MockAllTheThings.Testing;
 using Rhino.Mocks;
 
@@ -19,7 +18,7 @@ namespace MockAllTheThings.RhinoMocks.Tests
 		{
 			var mockedTestService = 
 				Create
-					.MeA<TestServiceWithMixedDependencies>()
+					.A<TestServiceWithMixedDependencies>()
 					.MockingAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
@@ -33,9 +32,9 @@ namespace MockAllTheThings.RhinoMocks.Tests
 
 			var mockedTestService = 
 				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterface)
-					.AndMockingAllTheOtherThings();
+					.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterface)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -50,10 +49,10 @@ namespace MockAllTheThings.RhinoMocks.Tests
 
 			var mockedTestService = 
 				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterface)
-					.AndUsingThisInstanceToMock<TestAbstractClass>(MockRepository.GenerateMock<TestAbstractClass>())
-					.AndMockingAllTheOtherThings();
+					.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterface)
+					.UsingInstanceFor<TestAbstractClass>(MockRepository.GenerateMock<TestAbstractClass>())
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -68,11 +67,10 @@ namespace MockAllTheThings.RhinoMocks.Tests
 
 			var mockedTestService = 
 				Create
-					.MeA<TestServiceWithMixedDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(0)
-					.AndUsingThisInstanceToMock<TestAbstractClass>(MockRepository.GenerateMock<TestAbstractClass>())
-					.AndMockingAllTheOtherThings();
+					.A<TestServiceWithMixedDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
+                    .UsingInstanceFor<TestAbstractClass>(MockRepository.GenerateMock<TestAbstractClass>())
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -86,11 +84,9 @@ namespace MockAllTheThings.RhinoMocks.Tests
 			var mockTestInterfaceObject = MockRepository.GenerateMock<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(0)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -107,11 +103,9 @@ namespace MockAllTheThings.RhinoMocks.Tests
 			var mockTestInterfaceObject = MockRepository.GenerateMock<ITestInterface>();
 
 			var mockedTestService = 
-				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.SpecificallyForTheArgumentAt(2)
-					.AndMockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(2)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -129,9 +123,9 @@ namespace MockAllTheThings.RhinoMocks.Tests
 
 			var mockedTestService = 
 				Create
-					.MeA<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingThisInstanceToMock<ITestInterface>(mockTestInterfaceObject)
-					.AndMockingAllTheOtherThings();
+					.A<TestServiceWithMultipleIdenticalDependencies>()
+					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
+					.MockingAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
