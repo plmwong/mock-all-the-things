@@ -33,7 +33,7 @@ public class Foo(IBar bar1, IBar bar2, IBaz baz) {
 ### Mock everything
 
 ```
-Create.MeA<Foo>()
+Create.A<Foo>()
 	.MockingAllTheThings();
 ```
 
@@ -42,16 +42,15 @@ Create.MeA<Foo>()
 Note: This will affect all instances of the type (unless a specific parameter is targetted).
 
 ```
-Create.MeA<Foo>()
-	.UsingThisInstanceToMock<IBar>(instanceOfBar)
-        .AndMockingAllTheOtherThings();
+Create.A<Foo>()
+	.For<IBar>().Use(instanceOfBar)
+        .MockAllTheOtherThings();
 ```
 
 ### Providing an instance for a specific parameter
 
 ```
-Create.MeA<Foo>()
-	.UsingThisInstanceToMock<IBar>(instanceOfBar)
-	.SpecificallyForTheArgumentAt(1)
-        .AndMockingAllTheOtherThings();
+Create.A<Foo>()
+	.For<IBar>().At(1).Use(instanceOfBar)
+        .MockAllTheOtherThings();
 ```
