@@ -22,8 +22,8 @@ namespace MockAllTheThings.Moq.Tests
 
             var mockedTestService =
                 Create.A<TestServiceWithMixedDependencies>()
-                    .UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
-                    .MockingAllTheOtherThings();
+                    .For<ITestInterface>().Use(mockTestInterfaceObject)
+                    .MockAllTheOtherThings();
 
             Assert.AreSame(mockedTestService.TestInterface.GetMock(), mockTestInterface);
         }
@@ -33,7 +33,7 @@ namespace MockAllTheThings.Moq.Tests
         {
             var mockedTestService =
                 Create.A<TestServiceWithMixedDependencies>()
-                    .MockingAllTheThings();
+                    .MockAllTheThings();
 
             mockedTestService.TestInterface.Test();
             mockedTestService.TestInterface.GetMock().Verify(m => m.Test(), Times.Once);

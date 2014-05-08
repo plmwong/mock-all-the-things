@@ -18,7 +18,7 @@ namespace MockAllTheThings.Moq.Tests
 		{
 			var mockedTestService = 
 				Create.A<TestServiceWithMixedDependencies>()
-					.MockingAllTheThings();
+					.MockAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -30,10 +30,10 @@ namespace MockAllTheThings.Moq.Tests
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create.A<TestServiceWithMixedDependencies>()
+                    .For<ITestInterface>().Use(mockTestInterfaceObject)
+                    .MockAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -47,11 +47,11 @@ namespace MockAllTheThings.Moq.Tests
 			var mockTestInterface = new Mock<ITestInterface>();
 			var mockTestInterfaceObject = mockTestInterface.Object;
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
-					.UsingInstanceFor<TestAbstractClass>(new Mock<TestAbstractClass>().Object)
-					.MockingAllTheOtherThings();
+			var mockedTestService =
+                Create.A<TestServiceWithMixedDependencies>()
+                    .For<ITestInterface>().Use(mockTestInterfaceObject)
+                    .For<TestAbstractClass>().Use(new Mock<TestAbstractClass>().Object)
+                    .MockAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -67,9 +67,9 @@ namespace MockAllTheThings.Moq.Tests
 
 			var mockedTestService = 
 				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
-					.UsingInstanceFor<TestAbstractClass>(new Mock<TestAbstractClass>().Object)
-					.MockingAllTheOtherThings();
+                    .For<ITestInterface>().At(0).Use(mockTestInterfaceObject)
+					.For<TestAbstractClass>().Use(new Mock<TestAbstractClass>().Object)
+                    .MockAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
@@ -85,8 +85,8 @@ namespace MockAllTheThings.Moq.Tests
 
 			var mockedTestService = 
 				Create.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
-					.MockingAllTheOtherThings();
+                    .For<ITestInterface>().At(0).Use(mockTestInterfaceObject)
+					.MockAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -105,8 +105,8 @@ namespace MockAllTheThings.Moq.Tests
 
 			var mockedTestService = 
 				Create.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(2)
-					.MockingAllTheOtherThings();
+                    .For<ITestInterface>().At(2).Use(mockTestInterfaceObject)
+					.MockAllTheThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
@@ -124,10 +124,9 @@ namespace MockAllTheThings.Moq.Tests
 			var mockTestInterfaceObject = mockTestInterface.Object;
 
 			var mockedTestService = 
-				Create
-					.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
-					.MockingAllTheOtherThings();
+				Create.A<TestServiceWithMultipleIdenticalDependencies>()
+					.For<ITestInterface>().Use(mockTestInterfaceObject)
+                    .MockAllTheOtherThings();
 
 			Assert.IsNotNull(mockedTestService);
 			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);

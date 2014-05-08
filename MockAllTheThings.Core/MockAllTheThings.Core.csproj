@@ -34,12 +34,13 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="CreateBuilderConfigured.cs" />
+    <Compile Include="ForBuilderIndexedMock.cs" />
+    <Compile Include="ForBuilderInitial.cs" />
     <Compile Include="IMockProvider.cs" />
     <Compile Include="Create.cs" />
     <Compile Include="CreateBuilderInitial.cs" />
     <Compile Include="ObjectExtensions.cs" />
-    <Compile Include="CreateBuilderConfiguredIndexedMock.cs" />
-    <Compile Include="CreateBuilderConfiguredTypeMock.cs" />
     <Compile Include="FactoryMethodMockProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

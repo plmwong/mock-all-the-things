@@ -13,123 +13,125 @@ namespace MockAllTheThings.FakeItEasy.Tests
 			Create.UsingProvider(new FakeItEasyMockProvider());
 		}
 
-		[Test]
-		public void CanCreateAMockOfAServiceWithMixedConstructorDependencyTypes()
-		{
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.MockingAllTheThings();
+        [Test]
+        public void CanCreateAMockOfAServiceWithMixedConstructorDependencyTypes()
+        {
+            var mockedTestService =
+                Create.A<TestServiceWithMixedDependencies>()
+                    .MockAllTheThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
-		}
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+        }
 
-		[Test]
-		public void CanCreateAMockTestServiceUsingAPresuppliedMock()
-		{
-			var mockTestInterface = A.Fake<ITestInterface>();
+        [Test]
+        public void CanCreateAMockTestServiceUsingAPresuppliedMock()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterface)
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create.A<TestServiceWithMixedDependencies>()
+                    .For<ITestInterface>().Use(mockTestInterface)
+                    .MockAllTheOtherThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface, mockTestInterface);
-		}
+            Assert.AreSame(mockedTestService.TestInterface, mockTestInterface);
+        }
 
-		[Test]
-		public void CanCreateAMockTestServiceUsingMultiplePresuppliedMocks()
-		{
-			var mockTestInterface = A.Fake<ITestInterface>();
+        [Test]
+        public void CanCreateAMockTestServiceUsingMultiplePresuppliedMocks()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterface)
-                    .UsingInstanceFor<TestAbstractClass>(A.Fake<TestAbstractClass>())
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create.A<TestServiceWithMixedDependencies>()
+                    .For<ITestInterface>().Use(mockTestInterface)
+                    .For<TestAbstractClass>().Use(A.Fake<TestAbstractClass>())
+                    .MockAllTheOtherThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface, mockTestInterface);
-		}
+            Assert.AreSame(mockedTestService.TestInterface, mockTestInterface);
+        }
 
-		[Test]
-		public void CanCreateAMockTestServiceUsingAnIndexedMock()
-		{
-			var mockTestInterfaceObject = A.Fake<ITestInterface>();
+        [Test]
+        public void CanCreateAMockTestServiceUsingAnIndexedMock()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMixedDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
-                    .UsingInstanceFor<TestAbstractClass>(A.Fake<TestAbstractClass>())
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create
+                    .A<TestServiceWithMixedDependencies>()
+                    .For<ITestInterface>().At(0).Use(mockTestInterface)
+                    .For<TestAbstractClass>().Use(A.Fake<TestAbstractClass>())
+                    .MockAllTheOtherThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMixedDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface, mockTestInterfaceObject);
-		}
+            Assert.AreSame(mockedTestService.TestInterface, mockTestInterface);
+        }
 
-		[Test]
-		public void CanCreateAMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
-		{
-			var mockTestInterfaceObject = A.Fake<ITestInterface>();
+        [Test]
+        public void CanCreateAMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_FirstPosition()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(0)
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create.A<TestServiceWithMultipleIdenticalDependencies>()
+                    .For<ITestInterface>().At(0).Use(mockTestInterface)
+                    .MockAllTheThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface1, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface2, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface3, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface2, mockedTestService.TestInterface3);
-		}
+            Assert.AreSame(mockedTestService.TestInterface1, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface2, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface3, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface2, mockedTestService.TestInterface3);
+        }
 
-		[Test]
-		public void CanMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_LastPosition()
-		{
-			var mockTestInterfaceObject = A.Fake<ITestInterface>();
+        [Test]
+        public void CanMockTestServiceWithIndexedMockWhenThereAreMultipleDependenciesOfSameInterface_LastPosition()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject).At(2)
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create.A<TestServiceWithMultipleIdenticalDependencies>()
+                    .For<ITestInterface>().At(2).Use(mockTestInterface)
+                    .MockAllTheThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface3, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface1, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface2, mockTestInterfaceObject);
-			Assert.AreNotSame(mockedTestService.TestInterface1, mockedTestService.TestInterface2);
-		}
+            Assert.AreSame(mockedTestService.TestInterface3, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface1, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface2, mockTestInterface);
+            Assert.AreNotSame(mockedTestService.TestInterface1, mockedTestService.TestInterface2);
+        }
 
-		[Test]
-		public void CanMockTestServiceWithTypeMocksWhenThereAreMultipleDependenciesOfSameInterface()
-		{
-			var mockTestInterfaceObject = A.Fake<ITestInterface>();
+        [Test]
+        public void CanMockTestServiceWithTypeMocksWhenThereAreMultipleDependenciesOfSameInterface()
+        {
+            var mockTestInterface = A.Fake<ITestInterface>();
 
-			var mockedTestService = 
-				Create.A<TestServiceWithMultipleIdenticalDependencies>()
-					.UsingInstanceFor<ITestInterface>(mockTestInterfaceObject)
-					.MockingAllTheOtherThings();
+            var mockedTestService =
+                Create
+                    .A<TestServiceWithMultipleIdenticalDependencies>()
+                    .For<ITestInterface>().Use(mockTestInterface)
+                    .MockAllTheOtherThings();
 
-			Assert.IsNotNull(mockedTestService);
-			Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
+            Assert.IsNotNull(mockedTestService);
+            Assert.IsInstanceOf<TestServiceWithMultipleIdenticalDependencies>(mockedTestService);
 
-			Assert.AreSame(mockedTestService.TestInterface1, mockTestInterfaceObject);
-			Assert.AreSame(mockedTestService.TestInterface2, mockTestInterfaceObject);
-			Assert.AreSame(mockedTestService.TestInterface3, mockTestInterfaceObject);
-			Assert.AreSame(mockedTestService.TestInterface2, mockedTestService.TestInterface3);
-		}
+            Assert.AreSame(mockedTestService.TestInterface1, mockTestInterface);
+            Assert.AreSame(mockedTestService.TestInterface2, mockTestInterface);
+            Assert.AreSame(mockedTestService.TestInterface3, mockTestInterface);
+            Assert.AreSame(mockedTestService.TestInterface2, mockedTestService.TestInterface3);
+        }
 	}
 }
 

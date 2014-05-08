@@ -5,24 +5,22 @@ using System.Diagnostics;
 
 namespace MockAllTheThings.Core
 {
-	public class CreateBuilderInitial<T>
-	{
-		readonly IDictionary<Type, object> _configuredMocks;
-		readonly IDictionary<int, object> _configuredIndexMocks;
+    public class CreateBuilderInitial<T>
+    {
+		internal readonly IDictionary<Type, object> ConfiguredMocks;
+		internal readonly IDictionary<int, object> ConfiguredIndexMocks;
 
 		public CreateBuilderInitial() {
-			_configuredMocks = new Dictionary<Type, object>();
-			_configuredIndexMocks = new Dictionary<int, object>();
+			ConfiguredMocks = new Dictionary<Type, object>();
+			ConfiguredIndexMocks = new Dictionary<int, object>();
 		}
 
-		public CreateBuilderConfiguredTypeMock<T> UsingInstanceFor<TMock>(TMock mockedObject) {
-            Must.NotBeNull(() => mockedObject);
+        public ForBuilderInitial<T, TMock> For<TMock>()
+	    {
+            return new ForBuilderInitial<T, TMock>(this);
+	    }
 
-			_configuredMocks.Add(typeof(TMock), mockedObject);
-			return new CreateBuilderConfiguredTypeMock<T>(this, typeof(TMock));
-		}
-
-		public T MockingAllTheThings() {
+		public T MockAllTheThings() {
 			var typeToMock = typeof(T);
 
 			var constructorInfo = typeToMock
@@ -38,10 +36,10 @@ namespace MockAllTheThings.Core
 
 				object mockedObject;
 
-				if (_configuredIndexMocks.ContainsKey(i)) {
-					mockedObject = _configuredIndexMocks[i];
-				} else if (_configuredMocks.ContainsKey(parameterToMockType)) {
-					mockedObject = _configuredMocks[parameterToMockType];
+				if (ConfiguredIndexMocks.ContainsKey(i)) {
+					mockedObject = ConfiguredIndexMocks[i];
+				} else if (ConfiguredMocks.ContainsKey(parameterToMockType)) {
+					mockedObject = ConfiguredMocks[parameterToMockType];
 				} else {
 					mockedObject = Create.Instance.CreateMock(parameterToMockType);
 				}
@@ -54,12 +52,6 @@ namespace MockAllTheThings.Core
 			var mockedType = constructorInfo.Invoke(mockedParameters);
 
 			return (T)mockedType;
-		}
-
-		internal void TransferTypeMockToIndexedMock(Type mockType, int index) {
-			var mockedObject = _configuredMocks[mockType];
-			_configuredIndexMocks.Add(index, mockedObject);
-			_configuredMocks.Remove(mockType);
 		}
 	}
 }
